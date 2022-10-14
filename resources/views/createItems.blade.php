@@ -8,29 +8,33 @@
             <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">
         </head>
         <body>
-            <h1>Blog Name</h1>
-            <form action='/postsItem' method='POST'>
+            <h1>アイテム　紹介</h1>
+            <form action='/storeItems' method='POST'>
                 {{ csrf_field() }}
                 <div class='item_name'>
                     <h2>Name</h2>
-                    <input type='text' name='post[naem]' placeholder='アイテムの名前'/>
-                    <p class="title_error" style="color:red">{{ $errors->first('post.title') }}</p>
+                    <input type='text' name='item[name]' placeholder='アイテムの名前'/>
+                    <p class="title_error" style="color:red">{{ $errors->first('item.title') }}</p>
                 </div>
                 <div class='item_coment'>
                     <h2>content</h2>
-                    <textarea name='post[content]' placeholder='紹介文' ></textarea>
-                    <p class='body_error' style="color:red">{{ $errors->first('post.body') }}</p>
+                    <textarea name='item[content]' placeholder='紹介文' ></textarea>
+                    <p class='body_error' style="color:red">{{ $errors->first('item.body') }}</p>
                 </div>
                 <div class='URL'>
                     <h2>URL</h2>
-                    <text type='text' name=post[URL] placeholder='https~~~'></text>
+                    <textarea type='text' name=item[URL] placeholder='https~~~'></textarea>
+                </div>
+                <div class='adrres'>
+                    <h2>場所</h2>
+                    <textarea type='text' name=item[adrres] value='https~~~'></textarea>
                 </div>
                 <div class='image'>
                     <h2>画像</h2>
-                    <text type='text' name=post[image] placeholder='https~~~'></text>
+                    <textarea type='text' name=item[image] value='https~~~'></textarea>
                 </div>
                 <input type='submit' value='store'/>
             </form>
-            <div class='back'>[<a href='/'>back</a>]</div>
+            <div class='back'>[<a href='/posts'>back</a>]</div>
         </body>
     </html>

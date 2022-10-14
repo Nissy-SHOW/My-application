@@ -30,4 +30,7 @@ Route::get('/dashboard', function () {
 
 require __DIR__.'/auth.php';
 Route::get('/posts', [PostController::class, 'index']); 
-// Route::get('/posts/createitem' ,[PostController::class, createItems]);
+Route::get('/items/createitems' ,[PostController::class, 'createItems']);
+Route::get('/postsItems',[PostController::class,'indexItems']);
+
+Route::post('/storeItems',[PostController::class,'storeItems']);
