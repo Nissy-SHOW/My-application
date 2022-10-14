@@ -20,6 +20,7 @@
                 </div>
             @endforeach
         </div>
+        <a href='/posts'>user</a>
         <a href='/items/createitems'>createItem</a>
     </body>
 </html>

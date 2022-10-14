@@ -30,7 +30,7 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 require __DIR__.'/auth.php';
-Route::get('/posts', [ItemController::class, 'index']); 
+Route::get('/posts', [PostController::class, 'index']); 
 Route::get('/items/createitems' ,[ItemController::class, 'createItems']);
 Route::get('/index',[ItemController::class,'indexItems']);
 Route::get('/items/{item}',[ItemController::class,'showItem']);
