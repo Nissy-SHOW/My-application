@@ -8,6 +8,6 @@
         </head>
         <body>
             <h1>My_Application</h1>
-            <a href='/posts/createitems'>createItem</a>
+            <a href='/items/createitems'>createItem</a>
         </body>
     </html>

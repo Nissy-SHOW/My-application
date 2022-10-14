@@ -3,7 +3,8 @@
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
-use App\Http\Controllers\PostController; 
+use App\Http\Controllers\PostController;
+use App\Http\Controllers\ItemController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -29,8 +30,8 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 require __DIR__.'/auth.php';
-Route::get('/posts', [PostController::class, 'index']); 
-Route::get('/items/createitems' ,[PostController::class, 'createItems']);
-Route::get('/postsItems',[PostController::class,'indexItems']);
-
-Route::post('/storeItems',[PostController::class,'storeItems']);
+Route::get('/posts', [ItemController::class, 'index']); 
+Route::get('/items/createitems' ,[ItemController::class, 'createItems']);
+Route::get('/index',[ItemController::class,'indexItems']);
+Route::get('/items/{item}',[ItemController::class,'showItem']);
+Route::post('/storeItems',[ItemController::class,'storeItems']);

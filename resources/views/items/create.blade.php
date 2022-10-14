@@ -35,6 +35,6 @@
                 </div>
                 <input type='submit' value='store'/>
             </form>
-            <div class='back'>[<a href='/posts'>back</a>]</div>
+            <div class='back'>[<a href='/index'>back</a>]</div>
         </body>
     </html>
