@@ -32,7 +32,7 @@
         <div>
             <div class="image">
                 <h3>image</h3>
-                <p>{{ $item->image }}</p>
+                <p href="$item->image">{{ $item->image_url }}</p>
             </div>
         </div>
         <div class="footer">

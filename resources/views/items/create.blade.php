@@ -9,7 +9,7 @@
         </head>
         <body>
             <h1>アイテム　紹介</h1>
-            <form action='/storeItems' method='POST'>
+            <form action='/storeItems' method='POST'enctype="multipart/form-data">
                 {{ csrf_field() }}
                 <div class='item_name'>
                     <h2>Name</h2>
@@ -23,18 +23,18 @@
                 </div>
                 <div class='URL'>
                     <h2>URL</h2>
-                    <textarea type='text' name=item[URL] placeholder='https~~~'></textarea>
+                    <textarea type='text' name='item[URL]' placeholder='https~~~'></textarea>
                 </div>
-                <div class='adrres'>
+                <div class='場所'>
                     <h2>場所</h2>
-                    <textarea type='text' name=item[adrres] value='https~~~'></textarea>
+                    <textarea type='text' name='item[adrres]' placeholder='https~~~'></textarea>
                 </div>
-                <div class='image'>
-                    <h2>画像</h2>
-                    <textarea type='text' name=item[image] value='https~~~'></textarea>
+                <div>
+                    <input type="file" name='image'>
                 </div>
                 <input type='submit' value='store'/>
             </form>
             <div class='back'>[<a href='/index'>back</a>]</div>
+            <div class='back'>[<a href='/cloudinary'>cloudinary</a>]</div>
         </body>
     </html>
