@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('content');
             $table->string('adrres');
             $table->string('URL');
-            $table->string('image');
+            $table->string('image_url');
             $table->timestamps();
         });
     }
