@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-
+<x-app-layout>
+    
     <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
         <head>
             <meta charset="utf-8">
@@ -7,8 +8,11 @@
             <!-- Fonts -->
             <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">
         </head>
+    
         <body>
             <h1>アイテム　紹介</h1>
+            <div>{{ Auth::user()->name }}</div>
+            </div>
             <form action='/storeItems' method='POST'>
                 {{ csrf_field() }}
                 <div class='item_name'>
@@ -38,3 +42,4 @@
             <div class='back'>[<a href='/index'>back</a>]</div>
         </body>
     </html>
+</x-app-layout>
