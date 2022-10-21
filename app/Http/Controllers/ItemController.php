@@ -25,20 +25,14 @@ class ItemController extends Controller
     }
     public function storeItems(Request $request, Item $item)
     {
-        // dd($request);
-        // $input = $request['item'];
-        // dd($input);
-        // $input += ['user_id' => $request->user()->id];
-        // $input += ['image' => $image_url];
-        // $image_url = Cloudinary::upload($input['image']->getRealPath())->getSecurePath();
         $image_url = Cloudinary::upload($request->file('image')->getRealPath())->getSecurePath();
-        // $image = $input['image']->getRealPath();
-        //$image_url = Cloudinary::upload($image->getSecurePath());
-        // $item->fill($input)->save();
-        // return redirect('/items/' . $item->id);
-        // dd($request->all());
-        dd($image_url);
-        // dd($input['image']->getRealPath(),$input,$request->file('image'));
+        $input = $request['item'];
+        $input += ['user_id' => $request->user()->id];
+        $input += ['image_url' => $image_url];
+        
+        $item->fill($input)->save();
+        return redirect('/items/' . $item->id);
+
         
     }
 }
