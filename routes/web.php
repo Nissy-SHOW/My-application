@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ItemController;
+use App\Http\Controllers\CloudinaryController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,14 +20,17 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
-
-require __DIR__.'/auth.php';
-
 Route::get('/posts', [PostController::class, 'index']); 
 Route::get('/items/createitems' ,[ItemController::class, 'createItems']);
 Route::get('/index',[ItemController::class,'indexItems']);
 Route::get('/items/{item}',[ItemController::class,'showItem']);
 Route::post('/storeItems',[ItemController::class,'storeItems']);
+
+Route::get('/cloudinary', [CloudinaryController::class, 'cloudinary']);  //投稿フォームの表示
+Route::post('/cloudinary', [CloudinaryController::class, 'cloudinary_store']);  //画像保存処理
+
+Route::get('/dashboard', function () {
+    return Inertia::render('Dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
+
+require __DIR__.'/auth.php';

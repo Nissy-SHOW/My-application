@@ -12,7 +12,7 @@ class Item extends Model
         'content',
         'adrres',
         'URL',
-        'image',
+        'image_url',
         'user_id'
         ];
     use HasFactory;

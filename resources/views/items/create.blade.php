@@ -11,10 +11,8 @@
     
         <body>
             <h1>アイテム　紹介</h1>
-            <div>{{ Auth::user()->name }}</div>
-            </div>
-            <form action='/storeItems' method='POST'>
-                {{ csrf_field() }}
+            <form action='/storeItems' method='POST' enctype="multipart/form-data">
+                @csrf
                 <div class='item_name'>
                     <h2>Name</h2>
                     <input type='text' name='item[name]' placeholder='アイテムの名前'/>
@@ -35,8 +33,9 @@
                 </div>
                 <div class='image'>
                     <h2>画像</h2>
-                    <textarea type='text' name=item[image] value='https~~~'></textarea>
+                    <input type="file" name="image">
                 </div>
+                
                 <input type='submit' value='store'/>
             </form>
             <div class='back'>[<a href='/index'>back</a>]</div>
