@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('adrres');
             $table->string('URL');
             $table->string('image_url');
+            $table->softDeletes();
             $table->timestamps();
         });
     }
