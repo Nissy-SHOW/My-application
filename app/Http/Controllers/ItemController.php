@@ -32,8 +32,22 @@ class ItemController extends Controller
         
         $item->fill($input)->save();
         return redirect('/items/' . $item->id);
-
-        
+    }
+    public function edit(Item $item)
+    {
+        return view('items/edit')->with(['item' => $item]);
+    }
+    public function update(Request $request, Item $item)
+    {
+        $input_item = $request['item'];
+        $item->fill($input_item)->save();
+    
+        return redirect('/items/' . $item->id);
+    }
+    public function delete(Item $item)
+    {
+        $item->delete();
+        return redirect('/index');
     }
 }
 ?>

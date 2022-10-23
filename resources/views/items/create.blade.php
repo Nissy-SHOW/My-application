@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <x-app-layout>
-    
     <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
         <head>
             <meta charset="utf-8">
@@ -38,7 +37,7 @@
                 
                 <input type='submit' value='store'/>
             </form>
-            <div class='back'>[<a href='/index'>back</a>]</div>
+            <div class='back'>[<a href='/'>back</a>]</div>
         </body>
     </html>
 </x-app-layout>
