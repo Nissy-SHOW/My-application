@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ItemController;
+use App\Http\Controllers\LikeController;
 use App\Http\Controllers\CloudinaryController;
 /*
 |--------------------------------------------------------------------------
@@ -29,6 +30,9 @@ Route::group(['middleware' => ['auth']], function(){
     
     Route::get('/users/{user}/edit', [PostController::class, 'edit']);
     Route::put('/users/{user}', [PostController::class, 'update']);
+    
+    Route::post('/like/{postId}',[LikeController::class,'store']);
+    Route::post('/unlike/{postId}',[LikeController::class,'destroy']);
 });
 /*
 Route::get('/dashboard', function () {

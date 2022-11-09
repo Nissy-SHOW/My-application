@@ -5,6 +5,7 @@
             <title>Blog</title>
             <!-- Fonts -->
             <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">
+            <link href="{{secure_asset('css/create.css')}}" rel="stylesheet" >
         </head>
     
         <body>
