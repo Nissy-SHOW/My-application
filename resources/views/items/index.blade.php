@@ -5,7 +5,7 @@
             <meta charset="utf-8">
             <title>Items</title>
             <!-- Fonts -->
-            <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+            
         </head>
         <body>
             <div class='items'>
